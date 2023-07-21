@@ -4,6 +4,7 @@ metadata:
   name: stunner
   namespace: {{ .Release.Namespace }}
   labels: {{- toYaml .Values.stunner.deployment.label | nindent 4}}
+  annotations: {{- toYaml .Values.stunner.service.annotations | nindent 4}}
 spec:
   selector: {{- toYaml .Values.stunner.deployment.label | nindent 4}}
   ports:
